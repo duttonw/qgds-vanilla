@@ -1,5 +1,5 @@
 /**
- * @file accordion.stories.js
+ * @file banner.stories.js
  * @description Storybook configuration file for the Accordion component.
  * @module accordion.stories
  */
@@ -16,13 +16,13 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 export default {
     title: "Components/Accordion",
-    render: ( args) =>  {
+    render: ( args) => {
         handlebarsInit(Handlebars)
         try {
             return Handlebars.compile(example1template )(args)
         } catch (e) {
             console.log(e)
-            return  JSON.stringify(e) + JSON.stringify(args);
+            return JSON.stringify(e) + JSON.stringify(args);
         }
     },
     args: example1,

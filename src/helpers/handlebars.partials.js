@@ -38,6 +38,7 @@ import overflow_menu from "../components/overflow_menu/html/component.hbs?raw";
 import page_alert from "../components/page_alert/html/component.hbs?raw";
 import pagination from "../components/pagination/html/component.hbs?raw";
 import promo_panel from "../components/promo_panel/html/component.hbs?raw";
+import search_box from "../components/search_box/html/component.hbs?raw";
 import tab from "../components/tab/html/component.hbs?raw";
 import updated_date from "../components/updated_date/html/component.hbs?raw";
 import widgets from "../components/widgets/html/component.hbs?raw";
@@ -86,6 +87,7 @@ export default function handlebarsPartials(handlebars) {
   handlebars.registerPartial("page_alert", page_alert);
   handlebars.registerPartial("pagination", pagination);
   handlebars.registerPartial("promo_panel", promo_panel);
+  handlebars.registerPartial("search_box", search_box);
   handlebars.registerPartial("tab", tab);
   handlebars.registerPartial("updated_date", updated_date);
   handlebars.registerPartial("widgets", widgets);
