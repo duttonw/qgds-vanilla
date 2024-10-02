@@ -14,11 +14,11 @@
     "watch": "node esbuild.js --watch",
     "serve": "node esbuild.js --serve",
     "add-component": "bash scripts/add_component.sh",
-    "jsdoc": "./node_modules/jsdoc/jsdoc.js -a all -c jsdoc.json -r -R README.md ./src/components/ -d ./documentation/jsdoc",
     "test": "echo 'no tests exist'",
     "test:integration": "echo 'no test:integration exist'",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build --webpack-stats-json "
+    "build-storybook": "storybook build --webpack-stats-json ",
+    "package-docs": "npm run build-storybook && rm -rf docs/storybook && mv storybook-static docs/storybook"
   },
   "keywords": [],
   "author": "",

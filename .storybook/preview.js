@@ -49,9 +49,13 @@ const preview = {
             },
         },
         docs: {
-            source: {
-                excludeDecorators: true,
-            },
+            toc: {
+                headingSelector: 'h1, h2, h3',
+            }, // 👈 Enables the table of contents,
+
+            // source: {
+            //     excludeDecorators: true,
+            // },
         },
         backgrounds: {
             //default: 'default',
