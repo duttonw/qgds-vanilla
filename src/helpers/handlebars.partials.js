@@ -1,6 +1,7 @@
 /* global Handlebars */
 /** THIS IS A GENERATED FILE **/
 
+import button from "../components/_global/css/btn/stories/button.hbs?raw";
 import _global from "../components/_global/html/component.hbs?raw";
 import ds_component from "../components/_global/html/ds_component.hbs?raw";
 import _template from "../components/_template/html/component.hbs?raw";
@@ -50,6 +51,7 @@ import widgets from "../components/widgets/html/component.hbs?raw";
  * @returns {void} Result of the helper operation
  */
 export default function handlebarsPartials(handlebars) {
+  handlebars.registerPartial("button", button);
   handlebars.registerPartial("_global", _global);
   handlebars.registerPartial("ds_component", ds_component);
   handlebars.registerPartial("_template", _template);

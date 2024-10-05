@@ -4,32 +4,38 @@
  * @module accordion.stories
  */
 
-import example1 from "../html/example1.json";
-let defaultdata = example1
-import example1template from "./../html/example1.test.hbs?raw";
-import example2html from "./../html/example2.html?raw";
-import example3html from "./../html/example3.html?raw";
-import example4html from "./../html/example4.html?raw";
-import example5html from "./../html/example5.html?raw";
+import examplePrimaryData from "./examplePrimary.json";
+import exampleTemplate from "./example.test.hbs?raw";
+import exampleSecondaryData from "./exampleSecondary.json";
+import exampleTertiaryData from "./exampleTertiary.json";
+import example2html from "./example2.html?raw";
+import example3html from "./example3.html?raw";
+import example4html from "./example4.html?raw";
+import example5html from "./example5.html?raw";
 
 
 // load helpers handlebars
 import Handlebars from "handlebars";
-import handlebarsInit from "../../../helpers/handlebars.init.js";
+import handlebarsInit from "./../../../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "Components/Accordion",
+    title: "Components/Buttons",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {
-            return Handlebars.compile(example1template )(args)
+            var templateData = Handlebars.compile(exampleTemplate )(args)
+            return `
+           <div class="qld__code-preview-body qld__body qld__body--light">
+            ${templateData}
+           </div>
+            `
         } catch (e) {
             console.log(e)
-            return JSON.stringify(e) + JSON.stringify(args);
+            return "error:" + JSON.stringify(e) + JSON.stringify(args);
         }
     },
-    args: example1,
+    args: examplePrimaryData,
 
 
     /**
@@ -55,6 +61,68 @@ export default {
  */
 export const Default = {};
 
+/**
+ * Primary Buttons
+ */
+export const PrimaryButtons = {
+    render: ( args) => {
+        handlebarsInit(Handlebars)
+        try {
+            var templateData = Handlebars.compile(exampleTemplate )(args)
+            return `
+           <div class="qld__code-preview-body qld__body qld__body--light">
+            ${templateData}
+           </div>
+            `
+        } catch (e) {
+            console.log(e)
+            return "error:" + JSON.stringify(e) + JSON.stringify(args);
+        }
+    },
+    args: examplePrimaryData
+
+}
+
+/**
+ * Secondary Buttons
+ */
+export const SecondaryButtons = {
+    render: ( args) => {
+        handlebarsInit(Handlebars)
+        try {
+            var templateData = Handlebars.compile(exampleTemplate )(args)
+            return `
+           <div class="qld__code-preview-body qld__body qld__body--light">
+            ${templateData}
+           </div>
+            `
+        } catch (e) {
+            console.log(e)
+            return "error:" + JSON.stringify(e) + JSON.stringify(args);
+        }
+    },
+    args: exampleSecondaryData
+}
+/**
+ * Tertiary Buttons
+ */
+export const TertiaryButtons = {
+    render: ( args) => {
+        handlebarsInit(Handlebars)
+        try {
+            var templateData = Handlebars.compile(exampleTemplate )(args)
+            return `
+           <div class="qld__code-preview-body qld__body qld__body--light">
+            ${templateData}
+           </div>
+            `
+        } catch (e) {
+            console.log(e)
+            return "error:" + JSON.stringify(e) + JSON.stringify(args);
+        }
+    },
+    args: exampleTertiaryData
+}
 /**
  * Single light
  */

@@ -23,10 +23,11 @@ A singular method of expanding and collapsing a piece of content with a title. T
 
 Example
 
-TODO: example with single accourdion  stories white and dark here
-<Canvas>
-  <Story of={AccordionStories.Default} />
-</Canvas>
+<Canvas additionalActions={[{ title: 'Single Accordion Light', layout: 'centered' }]} story={{ inline: false, height: '150px'  }}
+    of={AccordionStories.SingleLight} />
+<Canvas additionalActions={[{ title: 'Single Accordion Dark', layout: 'centered' }]} story={{ inline: false, height: '150px'  }}
+    of={AccordionStories.SingleDark} />
+
 
 [Figma](https://www.figma.com/file/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?node-id=23167%3A395554&t=jyGWG7bzBaAX7IIY-1)
 
@@ -39,7 +40,13 @@ A group of accordions that expand and collapse on click. Only the accordion that
 
 Example
 
-TODO: example with different accourdion group stories here
+
+<Canvas additionalActions={[{ title: 'Multi Accordion Dark', layout: 'centered' }]} story={{ inline: false, height: '400px'  }}
+        of={AccordionStories.MultiLight} />
+
+<Canvas additionalActions={[{ title: 'Multi Accordion Dark', layout: 'centered' }]} story={{ inline: false, height: '400px'  }}
+        of={AccordionStories.MultiDark} />
+
 
 [Figma](https://www.figma.com/file/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?node-id=23167%3A395554&t=jyGWG7bzBaAX7IIY-1)
 
