@@ -5,7 +5,6 @@
  */
 
 import example1 from "../html/example1.json";
-let defaultdata = example1
 import example1template from "./../html/example1.test.hbs?raw";
 import example2html from "./../html/example2.html?raw";
 import example3html from "./../html/example3.html?raw";
@@ -64,6 +63,7 @@ export const SingleLight = {
 
     },
     args: {},
+    globals: { theme: 'None'},
 
 }
 /**
@@ -75,6 +75,7 @@ export const SingleDark = {
 
     },
     args: {},
+    globals: { theme: 'Dark'},
 
 }
 /**
@@ -86,6 +87,7 @@ export const MultiLight = {
 
     },
     args: {},
+    globals: { theme: 'None'},
 
 }
 /**
@@ -97,133 +99,6 @@ export const MultiDark = {
 
     },
     args: {},
+    globals: { theme: 'Dark' },
 
 }
-//
-// /**
-//  * Accordion in 'Light' colour theme.
-//  */
-// export const Light = {
-//   args: {
-//     ...defaultdata,
-//     groupid: "accordion-group-light",
-//     accordionItems: {
-//       0: { ...defaultdata.accordionItems[0], id: "light-one" },
-//       1: { ...defaultdata.accordionItems[1], id: "light-two" },
-//       2: { ...defaultdata.accordionItems[2], id: "light-three" },
-//     },
-//   },
-//   parameters: {
-//     backgrounds: {
-//       default: "Light",
-//       values: [{ name: "Light", value: "var(--qld-light-background)" }],
-//     },
-//   },
-//   decorators: [
-//     (Story) => {
-//       return `
-//       <div class="container-fluid"><div class="row"><div class="col-12">
-//       <div class="light">
-//           ${Story()}
-//       </div>
-//       </div></div></div>
-//       `;
-//     },
-//   ],
-// };
-//
-// /**
-//  * Accordion in 'Alternative' colour theme.
-//  */
-// export const Alternative = {
-//   args: {
-//     ...defaultdata,
-//     groupid: "accordion-group-alt",
-//     accordionItems: {
-//       0: { ...defaultdata.accordionItems[0], id: "alt-one" },
-//       1: { ...defaultdata.accordionItems[1], id: "alt-two" },
-//       2: { ...defaultdata.accordionItems[2], id: "alt-three" },
-//     },
-//   },
-//   parameters: {
-//     backgrounds: {
-//       default: "Alternative",
-//       values: [{ name: "Alternative", value: "var(--qld-light-grey-alt)" }],
-//     },
-//   },
-//   decorators: [
-//     (Story) => {
-//       return `
-//       <div class="container-fluid"><div class="row"><div class="col-12">
-//       <div class="alt">
-//           ${Story()}
-//       </div>
-//       </div></div></div>
-//       `;
-//     },
-//   ],
-// };
-//
-// /**
-//  * Accordion in 'Dark' colour theme.
-//  */
-// export const Dark = {
-//   args: {
-//     ...defaultdata,
-//     groupid: "accordion-group-dark",
-//     accordionItems: {
-//       0: { ...defaultdata.accordionItems[0], id: "dark-one" },
-//       1: { ...defaultdata.accordionItems[1], id: "dark-two" },
-//       2: { ...defaultdata.accordionItems[2], id: "dark-three" },
-//     },
-//   },
-//   parameters: {
-//     backgrounds: {
-//       default: "Dark",
-//       values: [{ name: "Dark", value: "var(--qld-sapphire-blue)" }],
-//     },
-//   },
-//   decorators: [
-//     (Story) => {
-//       return `
-//       <div class="container-fluid"><div class="row"><div class="col-12">
-//       <div class="dark">
-//           ${Story()}
-//       </div>
-//       </div></div></div>
-//       `;
-//     },
-//   ],
-// };
-//
-// /**
-//  * Accordion in 'Dark alternative' colour theme.
-//  */
-// export const DarkAlternative = {
-//   args: {
-//     ...defaultdata,
-//     groupid: "accordion-group-dark-alt",
-//     accordionItems: {
-//       0: { ...defaultdata.accordionItems[0], id: "dark-alt-one" },
-//       1: { ...defaultdata.accordionItems[1], id: "dark-alt-two" },
-//       2: { ...defaultdata.accordionItems[2], id: "dark-alt-three" },
-//     },
-//   },
-//   parameters: {
-//     backgrounds: {
-//       default: "Dark alternative",
-//       values: [{ name: "Dark alternative", value: "var(--qld-dark-blue)" }],
-//     },
-//   },
-//   decorators: [
-//     (Story) => {
-//       return `
-//       <div class="container-fluid"><div class="row"><div class="col-12">
-//       <div class="dark-alt">
-//           ${Story()}
-//       </div>
-//       </div></div></div>
-//       `;
-//     },
-//   ],
-// };

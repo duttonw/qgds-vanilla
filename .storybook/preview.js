@@ -3,11 +3,23 @@
 import "../src/js/main.js";
 import "../src/css/main.scss";
 
-
-import {withThemeByClassName} from '@storybook/addon-themes';
-import {allBackgrounds} from "./modes.js";
+import { themes } from '@storybook/theming';
+import {withThemeByClassName, DecoratorHelpers} from '@storybook/addon-themes';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
+// import { withQGDSTheme } from './theme.decorator';
+
+const themeData = {
+    themes: {
+        "None": 'qld__body',
+        "Light": 'qld__body qld__body--light',
+        "Light alternative": 'qld__body qld__body--alt',
+        "Dark": 'qld__body qld__body--dark',
+        "Dark alternative": 'qld__body qld__body--dark-alt',
+    },
+    defaultTheme: 'None',
+    parentSelector: '.qld__body' //'body'  // Target the div with class "qld__body"
+};
 
 /** @type { import('@storybook/html-vite').Preview } */
 const preview = {
@@ -34,7 +46,7 @@ const preview = {
                 xxlarge: {name: "Extra Extra Large", styles: {width: "1599px", height: "1000px"}},
                 navbreakpoint: {name: "Nave Breakpoint", styles: {width: "992px", height: "800px"}},
                 ...INITIAL_VIEWPORTS
-            },
+            }
         },
         hideNoControlsWarning: true,
         expanded: true,
@@ -49,25 +61,18 @@ const preview = {
                 wrapLines: false,
             },
         },
+        backgrounds: { disable: true },
         docs: {
             toc: {
                 headingSelector: 'h1, h2, h3',
+                theme: themes.light,
             }, // 👈 Enables the table of contents,
+            source: {
 
-            // source: {
-            //     excludeDecorators: true,
-            // },
+                language: "html",
+            },
         },
-        backgrounds: {
-            //default: 'default',
-            values: [
-                allBackgrounds["default"],
-                allBackgrounds["Light"],
-                allBackgrounds["Light alternative"],
-                allBackgrounds["Dark"],
-                allBackgrounds["Dark alternative"],
-            ],
-        },
+
         options: {
             storySort: {
                 method: 'alphabetical',
@@ -84,26 +89,19 @@ const preview = {
     },
 
     decorators: [
-        // data-bs-theme="dark" won't be used
-        withThemeByClassName({
-            themes: {
-                "None": '',
-                "Light": 'light',
-                "Light alternative": 'alt',
-                "Dark": 'dark',
-                "Dark alternative": 'dark-alt',
-            },
-            defaultTheme: 'None',
-        }),
-
-        (Story) => {
-
+        (Story, context) => {
+            //This is for theme injection so that viewport changes shows correctly, withThemeByClassName is not retriggered if viewport is altered (re-rendered)
+            const currentTheme = DecoratorHelpers.pluckThemeFromContext(context)
+            const { themeOverride } = DecoratorHelpers.useThemeParameters();
+            const selectedThemeName = themeOverride || currentTheme || themeData.defaultTheme ;
+            const classes = themeData.themes[selectedThemeName];
             return `
-
+            <div class="qld__body ${classes}" >
 					${Story()}
-
+					</div>
       		`;
         },
+        withThemeByClassName(themeData), //For theme dynamic loading
     ],
 
     tags: ["autodocs"]

@@ -16,6 +16,14 @@ const config = {
         "@storybook/addon-themes",
         "@storybook/addon-essentials",
         "@storybook/addon-interactions",
+        {
+            name: "@storybook/addon-storysource",
+            options: {
+                loaderOptions: {
+                    injectStoryParameters: true,
+                },
+            },
+        },
         "@storybook/addon-links",
         "@chromatic-com/storybook",
         "@storybook/addon-designs"
@@ -41,15 +49,6 @@ const config = {
 
     viteFinal: async (config, {configType}) => {
         config.root = './dist'
-        // config.plugins.push({
-        //     name: "html-transform",
-        //     transform(src, id) {
-        //         if (id.endsWith(".mustache") || id.endsWith(".html") || id.endsWith(".hbs")) {
-        //             // Transform your HTML files here (src is the file content as a string)
-        //             return src;
-        //         }
-        //     },
-        // });
 
         return config;
     },
