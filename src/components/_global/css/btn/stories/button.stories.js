@@ -20,7 +20,7 @@ import handlebarsInit from "./../../../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "Components/Buttons",
+    title: "!Globals/Buttons",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {
