@@ -51,6 +51,7 @@ const preview = {
         hideNoControlsWarning: true,
         expanded: true,
         controls: {
+            expanded: true,
             matchers: {
                 color: /(background|color)$/i,
                 date: /Date$/i,

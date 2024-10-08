@@ -13,6 +13,7 @@ import exampleTemplate from "./example.test.hbs?raw";
 // load helpers handlebars
 import Handlebars from "handlebars";
 import handlebarsInit from "./../../../../../helpers/handlebars.init.js";
+import {flattenJson, unflattenJson} from "../../../../../../.storybook/helpers.js";
 
 
 export default {
@@ -20,7 +21,7 @@ export default {
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {
-            var templateData = Handlebars.compile(exampleTemplate )(args)
+            var templateData = Handlebars.compile(exampleTemplate )(unflattenJson(args))
             return `
             ${templateData}
             `
@@ -29,7 +30,22 @@ export default {
             return "error:" + JSON.stringify(e) + JSON.stringify(args);
         }
     },
-    args: exampleButtonsData,
+    args: flattenJson(exampleButtonsData),
+    argTypes: {
+        "component.data.metadata.id_field.value": {
+            control: 'text',
+            name: 'ID Field Value',
+        },
+        'component.data.type': {
+            control: 'radio',
+            name: 'List Type',
+            options: ['list', 'inline']
+        },
+        'component.data.items': {
+            control: 'array',
+            name: 'Items',
+        },
+    },
 
 
     /**
@@ -54,7 +70,8 @@ export default {
  * Default linked_list story
  * This is showing buttons list
  */
-export const Default = {};
+export const Default = {
+};
 
 /**
  * Default linked_list (inline) story
@@ -62,5 +79,5 @@ export const Default = {};
  */
 export const linkedListInline = {
     label: "Linked List (Inline)",
-    args: exampleButtonsInlineData
+    args: flattenJson(exampleButtonsInlineData)
 };

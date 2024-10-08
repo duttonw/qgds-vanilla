@@ -2,12 +2,12 @@
     "component": {
         "type": "link_list",
         "data": {
+            "type": "inline",
             "metadata": {
                 "id_field": {
                     "value": "linked_list1"
                 }
             },
-            "type": "inline",
             "items": [
                 {
                     "component": {

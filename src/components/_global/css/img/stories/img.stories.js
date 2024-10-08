@@ -12,27 +12,30 @@ import exampleTemplate from "./example.test.hbs?raw";
 // load helpers handlebars
 import Handlebars from "handlebars";
 import handlebarsInit from "./../../../../../helpers/handlebars.init.js";
-
+import { unflattenJson, flattenJson } from "./../../../../../../.storybook/helpers.js";
 
 export default {
     title: "!Globals/Image",
     render: ( args) => {
+        //must unflatten when rendering
         handlebarsInit(Handlebars)
         try {
-            var templateData = Handlebars.compile(exampleTemplate )(args)
+            var templateData = Handlebars.compile(exampleTemplate )(unflattenJson(args))
             return `
             ${templateData}
             `
         } catch (e) {
             console.log(e)
-            return "error:" + JSON.stringify(e) + JSON.stringify(args);
+            return "error:" + JSON.stringify(e) + JSON.stringify(unflattenJson(args));
         }
     },
-    args: exampleImageData,
+    //Must flatten for storybook to show controls correctly
+    args: flattenJson(exampleImageData),
     argTypes: {
-        "component.data.metadata.id_field.value": {
+        'component.data.metadata.id_field.value': {
             control: 'text',
-            name: 'ID Field Value',
+            label: 'ID Field Value',
+            name: 'ID',
         },
         "component.data.src": {
             control: 'text',
