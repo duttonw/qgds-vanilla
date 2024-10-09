@@ -34,7 +34,7 @@
                 "type": "button",
 
                 "data": {
-                    "metadata" : { "id_field" :{ "value" :  "buttonTertiary2"} },
+                    "metadata" : { "id_field" :{ "value" :  "buttonTertiary3"} },
                     "type": "tertiary",
                     "icon": {
                         "position": "trail",

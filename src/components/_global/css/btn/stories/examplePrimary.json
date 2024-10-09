@@ -34,7 +34,7 @@
                 "type": "button",
 
                 "data": {
-                    "metadata" : { "id_field" :{ "value" :  "button2"} },
+                    "metadata" : { "id_field" :{ "value" :  "button3"} },
                     "type": "primary",
                     "icon": {
                         "position": "trail",

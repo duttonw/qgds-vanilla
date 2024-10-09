@@ -16,6 +16,7 @@ const themeData = {
         "Light alternative": 'qld__body qld__body--alt',
         "Dark": 'qld__body qld__body--dark',
         "Dark alternative": 'qld__body qld__body--dark-alt',
+        "Disabled": '',
     },
     defaultTheme: 'None',
     parentSelector: '.qld__body' //'body'  // Target the div with class "qld__body"
@@ -97,7 +98,7 @@ const preview = {
             const selectedThemeName = themeOverride || currentTheme || themeData.defaultTheme ;
             const classes = themeData.themes[selectedThemeName];
             return `
-            <div class="qld__body ${classes}" >
+            <div class="${classes}" >
 					${Story()}
 					</div>
       		`;

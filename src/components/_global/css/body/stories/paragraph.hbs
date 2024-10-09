@@ -1,0 +1,16 @@
+{{! paragraph.hbs v0.0.1 }}
+{{#if component.data.items}}
+        {{#each component.data.items}}
+            <p>
+                {{#if component.type }}
+                    {{> (lookup component "type") this }}
+                {{else}}
+                    {{{ this }}}
+                {{/if}}
+            </p>
+        {{/each}}
+{{else}}
+    <p>
+        {{{ component.data.content }}}
+    </p>
+{{/if}}

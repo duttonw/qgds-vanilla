@@ -1,6 +1,7 @@
 /* global Handlebars */
 /** THIS IS A GENERATED FILE **/
 
+import paragraph from "../components/_global/css/body/stories/paragraph.hbs?raw";
 import button from "../components/_global/css/btn/stories/button.hbs?raw";
 import img from "../components/_global/css/img/stories/img.hbs?raw";
 import link_list from "../components/_global/css/link_list/stories/link_list.hbs?raw";
@@ -54,6 +55,7 @@ import widgets from "../components/widgets/html/component.hbs?raw";
  * @returns {void} Result of the helper operation
  */
 export default function handlebarsPartials(handlebars) {
+  handlebars.registerPartial("paragraph", paragraph);
   handlebars.registerPartial("button", button);
   handlebars.registerPartial("img", img);
   handlebars.registerPartial("link_list", link_list);

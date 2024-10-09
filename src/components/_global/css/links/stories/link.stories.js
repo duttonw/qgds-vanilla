@@ -12,6 +12,7 @@ import exampleTemplate from "./example.test.hbs?raw";
 // load helpers handlebars
 import Handlebars from "handlebars";
 import handlebarsInit from "./../../../../../helpers/handlebars.init.js";
+import {flattenJson, unflattenJson} from "../../../../../../.storybook/helpers.js";
 
 
 export default {
@@ -19,7 +20,7 @@ export default {
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {
-            var templateData = Handlebars.compile(exampleTemplate )(args)
+            var templateData = Handlebars.compile(exampleTemplate )(unflattenJson(args))
             return `
             ${templateData}
             `
@@ -28,7 +29,25 @@ export default {
             return "error:" + JSON.stringify(e) + JSON.stringify(args);
         }
     },
-    args: exampleLinkData,
+    args: flattenJson(exampleLinkData),
+    argTypes: {
+        "component.data.metadata.id_field.value": {
+            control: 'text',
+            name: 'ID Field Value',
+        },
+        "component.data.url": {
+            control: 'text',
+            name: 'URL',
+        },
+        "component.data.disabled": {
+            control: 'boolean',
+            name: 'Disabled',
+        },
+        "component.data.value": {
+            control: 'text',
+            name: 'Link Text',
+        },
+    },
 
 
     /**
