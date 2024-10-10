@@ -53,6 +53,10 @@ export default {
             control: 'text',
             name: 'Content',
         },
+        "component.data.source": {
+            control: 'text',
+            name: 'Source (applicable for blockquote  only)',
+        },
         "component.data.url": {
             control: 'text',
             name: 'Url (applicable for link only)',

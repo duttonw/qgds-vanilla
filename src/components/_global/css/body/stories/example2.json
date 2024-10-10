@@ -226,7 +226,37 @@
                     }
                 }
             }
+        },
+        {
+            "component": {
+                "type": "h3",
+                "data": {
+                    "content": {
+                        "value": "Blockquote"
+                    }
+                }
+            }
+        },
+        {
+            "component": {
+                "type": "blockquote",
+                "data": {
+                    "source": "Source text",
+                    "content": {
+                        "value": "A respected paediatrician and tireless advocate for abused children, and a dedicated oncology nurse and long-standing volunteer for Camp Quality have been honoured for the exceptional and enduring contribution they made to improving the lives of children\nand young people.\n"
+                    }
+                }
+            }
+        },
+        {
+            "component": {
+                "type": "h3",
+                "data": {
+                    "content": {
+                        "value": "Model"
+                    }
+                }
+            }
         }
-
     ]
 }
