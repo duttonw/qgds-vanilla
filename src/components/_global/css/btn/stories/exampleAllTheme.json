@@ -61,7 +61,7 @@
             "component": {
                 "type": "paragraph",
                 "data": {
-                    "content": "Secondary"
+                    "content": { "value": "Secondary"}
                 }
             }
         },
@@ -127,7 +127,7 @@
             "component": {
                 "type": "paragraph",
                 "data": {
-                    "content": "Tertiary"
+                    "content": { "value": "Tertiary"}
                 }
             }
         },
@@ -193,7 +193,7 @@
             "component": {
                 "type": "paragraph",
                 "data": {
-                    "content": "Toggle"
+                    "content": { "value": "Toggle"}
                 }
             }
         },

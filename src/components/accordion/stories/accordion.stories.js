@@ -44,7 +44,7 @@ export default {
         design: {
             name: "QGDS Figma Reference",
             type: "figma",
-            url: "https://www.figma.com/file/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?type=design&node-id=6276-45691&mode=design&t=crJKtPwMG2IcZf5E-4",
+            url: "https://www.figma.com/design/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?node-id=23167-395554",
         },
     },
 };

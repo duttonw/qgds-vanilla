@@ -70,11 +70,18 @@ export default {
      * @property {string} design.url - URL of the design parameter.
      */
     parameters: {
-        design: {
-            name: "QGDS Figma Reference",
-            type: "figma",
-            url: "https://www.figma.com/file/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?type=design&node-id=6276-45691&mode=design&t=crJKtPwMG2IcZf5E-4",
+        design: [
+            {
+            name: "QGDS Figma Reference Link",
+            type: "link",
+            url: "https://www.figma.com/design/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?node-id=5990-97962",
         },
+            {
+                name: "QGDS Figma Reference",
+                type: "figma",
+                url: "https://www.figma.com/design/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?node-id=5990-97962",
+            },
+            ]
     },
 };
 

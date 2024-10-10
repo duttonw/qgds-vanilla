@@ -1,6 +1,13 @@
 /* global Handlebars */
 /** THIS IS A GENERATED FILE **/
 
+import figcaption from "../components/_global/css/body/stories/figcaption.hbs?raw";
+import h1 from "../components/_global/css/body/stories/h1.hbs?raw";
+import h2 from "../components/_global/css/body/stories/h2.hbs?raw";
+import h3 from "../components/_global/css/body/stories/h3.hbs?raw";
+import h4 from "../components/_global/css/body/stories/h4.hbs?raw";
+import h5 from "../components/_global/css/body/stories/h5.hbs?raw";
+import h6 from "../components/_global/css/body/stories/h6.hbs?raw";
 import paragraph from "../components/_global/css/body/stories/paragraph.hbs?raw";
 import button from "../components/_global/css/btn/stories/button.hbs?raw";
 import img from "../components/_global/css/img/stories/img.hbs?raw";
@@ -55,6 +62,13 @@ import widgets from "../components/widgets/html/component.hbs?raw";
  * @returns {void} Result of the helper operation
  */
 export default function handlebarsPartials(handlebars) {
+  handlebars.registerPartial("figcaption", figcaption);
+  handlebars.registerPartial("h1", h1);
+  handlebars.registerPartial("h2", h2);
+  handlebars.registerPartial("h3", h3);
+  handlebars.registerPartial("h4", h4);
+  handlebars.registerPartial("h5", h5);
+  handlebars.registerPartial("h6", h6);
   handlebars.registerPartial("paragraph", paragraph);
   handlebars.registerPartial("button", button);
   handlebars.registerPartial("img", img);

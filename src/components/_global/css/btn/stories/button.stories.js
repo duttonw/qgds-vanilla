@@ -89,11 +89,23 @@ export default {
      * @property {string} design.url - URL of the design parameter.
      */
     parameters: {
-        design: {
-            name: "QGDS Figma Reference",
+        design: [{
+            name: "QGDS Button link",
+            type: "link",
+            url: "https://www.figma.com/design/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?node-id=23167-395558",
+        },{
+            name: "QGDS Button",
             type: "figma",
-            url: "https://www.figma.com/file/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?type=design&node-id=6276-45691&mode=design&t=crJKtPwMG2IcZf5E-4",
-        },
+            url: "https://www.figma.com/design/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?node-id=23167-395558",
+        }, {
+            name:"QGDS Button with icons link",
+            type: "link",
+            url: "https://www.figma.com/design/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?node-id=23167-395556",
+        }, {
+            name:"QGDS Button with icons",
+            type: "figma",
+            url: "https://www.figma.com/design/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?node-id=23167-395556",
+        }]
     },
 };
 

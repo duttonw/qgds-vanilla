@@ -39,6 +39,11 @@ export default {
             control: 'text',
             name: 'URL',
         },
+        "component.data.display": {
+            control: 'radio',
+            name: 'Display Size Override',
+            options: ['', 'xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs']
+        },
         "component.data.disabled": {
             control: 'boolean',
             name: 'Disabled',
@@ -60,11 +65,17 @@ export default {
      * @property {string} design.url - URL of the design parameter.
      */
     parameters: {
-        design: {
-            name: "QGDS Figma Reference",
+        design: [
+            {
+            name: "QGDS Text Links Figma Reference Link",
+            type: "link",
+            url: "https://www.figma.com/design/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?node-id=5990-98065",
+        },{
+            name: "QGDS Text Links  Figma Reference",
             type: "figma",
-            url: "https://www.figma.com/file/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?type=design&node-id=6276-45691&mode=design&t=crJKtPwMG2IcZf5E-4",
+            url: "https://www.figma.com/design/qKsxl3ogIlBp7dafgxXuCA/QLD-GOV-DDS?node-id=5990-98065",
         },
+            ]
     },
 };
 

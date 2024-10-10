@@ -1,5 +1,5 @@
-{{! paragraph.hbs v0.0.1 }}
-<p  {{#if component.data.metadata.id_field.value}}id="{{component.data.metadata.id_field.value}}"{{/if}}{{#if component.data.display}} class="qld__display-{{component.data.display}}"{{/if}}>
+{{! h3.hbs v0.0.1 }}
+<h3 {{#if component.data.metadata.id_field.value}}id="{{component.data.metadata.id_field.value}}"{{/if}}{{#if component.data.display}} class="qld__display-{{component.data.display}}"{{/if}}>
     {{#if component.data.items}}
         {{#each component.data.items}}
             {{#if component.type }}
@@ -11,4 +11,4 @@
     {{else}}
         {{{ component.data.content.value }}}
     {{/if}}
-</p>
+</h3>
