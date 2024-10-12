@@ -5,7 +5,7 @@
  */
 
 import exampleSingle from "./example.json";
-import exampleAll from "./example2.json";
+import exampleAll from "./allTypography.json";
 import exampleTemplate from "./example.test.hbs?raw";
 
 

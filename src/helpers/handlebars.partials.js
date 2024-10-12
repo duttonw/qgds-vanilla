@@ -1,6 +1,7 @@
 /* global Handlebars */
 /** THIS IS A GENERATED FILE **/
 
+import blockquote from "../components/_global/css/body/stories/blockquote.hbs?raw";
 import figcaption from "../components/_global/css/body/stories/figcaption.hbs?raw";
 import h1 from "../components/_global/css/body/stories/h1.hbs?raw";
 import h2 from "../components/_global/css/body/stories/h2.hbs?raw";
@@ -13,6 +14,7 @@ import button from "../components/_global/css/btn/stories/button.hbs?raw";
 import img from "../components/_global/css/img/stories/img.hbs?raw";
 import link_list from "../components/_global/css/link_list/stories/link_list.hbs?raw";
 import link from "../components/_global/css/links/stories/link.hbs?raw";
+import modal from "../components/_global/css/modal/stories/modal.hbs?raw";
 import _global from "../components/_global/html/component.hbs?raw";
 import ds_component from "../components/_global/html/ds_component.hbs?raw";
 import _template from "../components/_template/html/component.hbs?raw";
@@ -62,6 +64,7 @@ import widgets from "../components/widgets/html/component.hbs?raw";
  * @returns {void} Result of the helper operation
  */
 export default function handlebarsPartials(handlebars) {
+  handlebars.registerPartial("blockquote", blockquote);
   handlebars.registerPartial("figcaption", figcaption);
   handlebars.registerPartial("h1", h1);
   handlebars.registerPartial("h2", h2);
@@ -74,6 +77,7 @@ export default function handlebarsPartials(handlebars) {
   handlebars.registerPartial("img", img);
   handlebars.registerPartial("link_list", link_list);
   handlebars.registerPartial("link", link);
+  handlebars.registerPartial("modal", modal);
   handlebars.registerPartial("_global", _global);
   handlebars.registerPartial("ds_component", ds_component);
   handlebars.registerPartial("_template", _template);
