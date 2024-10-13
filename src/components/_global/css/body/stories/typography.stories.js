@@ -9,6 +9,7 @@ import exampleAll from "./allTypography.json";
 import exampleUnorderedList from "./unorderedList.json";
 import exampleOrderedList from "./orderedList.json";
 import exampleTemplate from "./example.test.hbs?raw";
+import exampleAllThemesTemplate from "./exampleAllTheme.test.hbs?raw";
 
 
 
@@ -134,4 +135,13 @@ export const componentGlobalElements = {
         templateFile: exampleTemplate
     },
     // globals: { theme: 'Disabled' },
+}
+
+/**
+ * All Themes Global Elements
+ */
+export const AllThemesGlobalElements = {
+    args: { ...exampleAll,
+        templateFile: exampleAllThemesTemplate},
+    globals: { theme: 'Disabled' },
 }
