@@ -1,0 +1,37 @@
+import { Canvas, Meta, Story, Markdown } from "@storybook/blocks"
+import * as linkedColumns from "./linkColumns.stories.js"
+import classTable from "./classesTable.md?raw"
+
+<Meta of={linkedColumns} />
+
+
+# Linked Columns
+
+May also be known as: ``Lists`` ``li`` ``ul`` ``ol``
+
+
+# Overview
+
+Linked Lists are a collection of items that are ordered in a sequence. They are used to group related items together and provide a clear visual hierarchy. Linked Lists are commonly used to display navigation menus, lists of items, or other types of content that need to be displayed in a structured way.
+
+* * *
+
+## Linked Columns
+
+These buttons are designed to be the most prominent and visually distinct on a page or within a user interface. Primary buttons are typically used to indicate the primary action that a user is intended to take, such as submitting a form, initiating a purchase, or creating a new account.
+
+Example
+
+<Canvas additionalActions={[{ title: 'Linked List', layout: 'centered' }]}
+        of={linkedColumns.Default} />
+
+
+
+## Implementation
+
+### Classes
+
+<Markdown>
+    {classTable}
+</Markdown>
+

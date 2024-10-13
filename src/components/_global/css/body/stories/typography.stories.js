@@ -6,6 +6,8 @@
 
 import exampleSingle from "./example.json";
 import exampleAll from "./allTypography.json";
+import exampleUnorderedList from "./unorderedList.json";
+import exampleOrderedList from "./orderedList.json";
 import exampleTemplate from "./example.test.hbs?raw";
 
 
@@ -42,7 +44,7 @@ export default {
         "component.type": {
             control: 'radio',
             name: 'Type',
-            options: ['h1', 'h2', 'h3', 'h4', 'h5', 'paragraph', 'link', 'abstract', 'figcaption']
+            options: ['h1', 'h2', 'h3', 'h4', 'h5', 'paragraph', 'link', 'abstract', 'figcaption', 'text', 'ul', 'ol', 'li']
         },
         "component.data.display": {
             control: 'radio',
@@ -101,6 +103,27 @@ export default {
  * This is showing buttons list
  */
 export const Default = {};
+
+
+/**
+ *  Unordered List
+ */
+export const unorderdList = {
+    args: {
+        ...exampleUnorderedList,
+        templateFile: exampleTemplate
+    },
+}
+
+/**
+ *  Unordered List
+ */
+export const orderdList = {
+    args: {
+        ...exampleOrderedList,
+        templateFile: exampleTemplate
+    },
+}
 
 /**
  * Component Global Elements
