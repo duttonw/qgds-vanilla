@@ -12,7 +12,7 @@ const config = {
         "../src/**/!(*_)*.stories.js",
     ],
     staticDirs: [
-        { from: '../src/', to: '/' },
+        //{ from: '../src/', to: '/' },
         { from: '../dist/assets/css', to: '/assets/css' },
         { from: '../dist/assets/js', to: '/assets/js' },
         { from: '../dist/assets/helpers', to: '/assets/helpers' },

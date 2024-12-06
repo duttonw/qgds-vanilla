@@ -1,7 +1,7 @@
 
 //load global styles and js
 import "../src/js/main.js";
-import "../src/css/main.scss";
+//import "../src/css/main.scss";
 //import "../src/css/main-invert.scss";
 //import "../src/css/main-qld-maroon.scss";
 //import "../src/css/main-qld-maroon-invert.scss";
@@ -16,7 +16,15 @@ import { themes } from '@storybook/theming';
 import {withThemeByClassName, DecoratorHelpers} from '@storybook/addon-themes';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
-// import { withQGDSTheme } from './theme.decorator';
+const brandToolbarItems=[{"value":"main-campaign-neon","title":"Campaign Neon"},{"value":"main-campaign-neon-invert","title":"Campaign Neon Invert"},{"value":"main-qld-corporate","title":"Qld Corporate"},{"value":"main-qld-corporate-invert","title":"Qld Corporate Invert"},{"value":"main","title":"Qld Default"},{"value":"main-invert","title":"Qld Default Invert"},{"value":"main-qld-high-contrast","title":"Qld High Contrast"},{"value":"main-qld-high-contrast-invert","title":"Qld High Contrast Invert"},{"value":"main-qld-maroon","title":"Qld Maroon"},{"value":"main-qld-maroon-invert","title":"Qld Maroon Invert"}];
+
+
+// loop brandtoolbar and import all scss
+// brandToolbarItems.forEach(brand => {
+//     import(`../src/css/${brand.value}`);
+// });
+
+
 
 const themeData = {
     themes: {
@@ -97,8 +105,39 @@ const preview = {
             },
         },
     },
-
+    globalTypes: {
+        brand: {
+            name: 'Brand',
+             defaultValue: 'main',
+            description: 'Global brand for components',
+            toolbar: {
+                icon: 'switchalt',
+                // The items represent your brand styles
+                items: brandToolbarItems,
+                dynamicTitle: true
+            },
+        },
+    },
+    // initialGlobals: {
+    //     brand: 'main',
+    // },
     decorators: [
+        (Story, context) => {
+            // Get the brand from the global context provided by the Controls addon
+            const brand = context.globals.brand;
+
+            // Try dynamic import of the SCSS
+            if (brand) {
+                console.log(brand);
+                import(`../src/css/${brand}.scss`).catch((e) => {
+                    import(`./assets/css/${brand}.css`).catch((ex) => {
+                        console.error(`Failed to load brand styles: ${filename}`, ex);
+                    })
+                });
+            }
+
+            return Story();
+        },
         (Story, context) => {
             //This is for theme injection so that viewport changes shows correctly, withThemeByClassName is not retriggered if viewport is altered (re-rendered)
             const currentTheme = DecoratorHelpers.pluckThemeFromContext(context)

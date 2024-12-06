@@ -148,3 +148,22 @@ if (entryMatch) {
     fs.writeFileSync(ESBUILD_FILE, esbuildContent);
     console.log('Updated esbuild.js with dynamic SCSS entries.');
 }
+
+const STORYBOOK_PREVIEW = '.storybook/preview.js';
+
+const content = fs.readFileSync(STORYBOOK_PREVIEW, 'utf8');
+
+//convert themesMap to value: sacs, title: space separated
+const themeValues=Object.keys(themesMap).map((themeKey) => {
+    return { value: themesMap[themeKey].scss, title: themeKey
+            .replace(/-/g, ' ')// Replace hyphens with spaces for readability
+            .replace(/\b\w/g, (char) => char.toUpperCase()) // Capitalize the first letter of each word
+        };
+});
+
+
+const updatedContent = content.replace(
+    /const brandToolbarItems.*/,
+    `const brandToolbarItems=${JSON.stringify(themeValues)};`
+);
+fs.writeFileSync(STORYBOOK_PREVIEW, updatedContent);
