@@ -33,6 +33,8 @@ import link_list from "../components/_global/css/link_list/stories/link_list.hbs
 import link from "../components/_global/css/links/stories/link.hbs?raw";
 import modal from "../components/_global/css/modal/stories/modal.hbs?raw";
 import table from "../components/_global/css/table/stories/table.hbs?raw";
+import fullPage from "../components/_global/hbs/fullPage/fullPage.hbs?raw";
+import head from "../components/_global/hbs/head/head.hbs?raw";
 import layout_body from "../components/_global/hbs/layout_body.hbs?raw";
 import layout_body_post from "../components/_global/hbs/layout_body_post.hbs?raw";
 import layout_body_pre from "../components/_global/hbs/layout_body_pre.hbs?raw";
@@ -46,6 +48,8 @@ import layout_html_post from "../components/_global/hbs/layout_html_post.hbs?raw
 import layout_main from "../components/_global/hbs/layout_main.hbs?raw";
 import layout_main_post from "../components/_global/hbs/layout_main_post.hbs?raw";
 import layout_main_pre from "../components/_global/hbs/layout_main_pre.hbs?raw";
+import metaDcTerms from "../components/_global/hbs/metaDcTerms/metaDcTerms.hbs?raw";
+import metaOpenGraph from "../components/_global/hbs/metaOpenGraph/metaOpenGraph.hbs?raw";
 import _global from "../components/_global/html/component.hbs?raw";
 import ds_component from "../components/_global/html/ds_component.hbs?raw";
 import _template from "../components/_template/html/component.hbs?raw";
@@ -127,6 +131,8 @@ export default function handlebarsPartials(handlebars) {
   handlebars.registerPartial("link", link);
   handlebars.registerPartial("modal", modal);
   handlebars.registerPartial("table", table);
+  handlebars.registerPartial("fullPage", fullPage);
+  handlebars.registerPartial("head", head);
   handlebars.registerPartial("layout_body", layout_body);
   handlebars.registerPartial("layout_body_post", layout_body_post);
   handlebars.registerPartial("layout_body_pre", layout_body_pre);
@@ -140,6 +146,8 @@ export default function handlebarsPartials(handlebars) {
   handlebars.registerPartial("layout_main", layout_main);
   handlebars.registerPartial("layout_main_post", layout_main_post);
   handlebars.registerPartial("layout_main_pre", layout_main_pre);
+  handlebars.registerPartial("metaDcTerms", metaDcTerms);
+  handlebars.registerPartial("metaOpenGraph", metaOpenGraph);
   handlebars.registerPartial("_global", _global);
   handlebars.registerPartial("ds_component", ds_component);
   handlebars.registerPartial("_template", _template);
