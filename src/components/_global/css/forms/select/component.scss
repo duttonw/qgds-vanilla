@@ -134,6 +134,7 @@ select{
 		}
 
 		&.qld__text-input--error {
+            color: var(--QLD-color-light__text);
 
 			&:not(:focus) {
 				border-color: $QLD-color-status__error;
@@ -144,8 +145,6 @@ select{
 				border-color: $QLD-color-status__error;
 				background-color: $QLD-color-status__error--lighter;
 			}
-
-			color: var(--QLD-color-light__text);
 		}
 
 		&:hover{

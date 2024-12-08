@@ -98,8 +98,8 @@ Object.entries(themesMap).forEach(([theme, { paletteFile, scss, variables }]) =>
                 /@import "@qld-gov-au\/qgds-tokens\/.*?palette\.scss";/,
                 `@import "@qld-gov-au/qgds-tokens/dist/scss/styles/${paletteFile}";`
             ).replace(
-                /@import "imports\/.*\.scss";/,
-                `@import "imports\/${variables}";`
+                /@import "imports\/variables.*\.scss";/,
+                `@import "imports\/${variabqGqles}";`
             );
             fs.writeFileSync(filePath, updatedContent);
             console.log(`Fixed @import in file: ${filePath}`);

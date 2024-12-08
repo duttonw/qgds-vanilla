@@ -1,6 +1,7 @@
 //-----------------------------------------------------------------------------
 // Footer
 //-----------------------------------------------------------------------------
+@use 'sass:map';
 
 .qld__footer {
     @include QLD-fontgrid(xs);
@@ -51,7 +52,7 @@
     a:visited {
         color: var(--QLD-color-light__link);
         text-decoration: none;
-        
+
     }
 
     .qld__btn{
@@ -104,7 +105,7 @@
             > .qld__footer__column{
                 @include QLD-space(padding-left, 1unit);
                 @include QLD-space(padding-right, 1unit);
-                
+
                 &:last-of-type{
                     @include QLD-media(lg) {
                         flex: 1;
@@ -188,7 +189,7 @@
         border-top: $QLD-border-width-thin solid $QLD-color-neutral--lighter;
         @include QLD-media(lg) {
             border-top: none;
-            
+
         }
         ul.qld__link-list {
             padding: 0;
@@ -232,7 +233,7 @@
                     // svg{
                     //     color: var(--QLD-color-light__action--secondary);
                     // }
-                    
+
                     &:has(svg) {
                         text-decoration: none;
                         span {
@@ -272,11 +273,11 @@
             @include QLD-space(padding-top, 0unit);
             height: 100%;
                 border-right: $QLD-border-width-default solid $QLD-color-neutral--lighter;
-            
-        
+
+
         }
         &__label {
-            @include QLD-media(lg, 'down') { 
+            @include QLD-media(lg, 'down') {
                 @include QLD-sronly();
             }
         }
@@ -301,12 +302,12 @@
                 padding: 0;
             }
             > li {
-                
+
                 @include QLD-media(xl, 'down') {
                     padding: 0;
                     > li {
                         width: auto;
-                        flex-basis: auto; 
+                        flex-basis: auto;
                     }
                 }
                 @include QLD-media(lg) {
@@ -351,18 +352,18 @@
 
     * + .qld__footer__logo {
         img {
-            @include QLD-space(margin-top, map-get( $QLD-space-map, $QLD-margin__text-element--mobile ) + px);
+            @include QLD-space(margin-top,  map.get( $QLD-space-map, $QLD-margin__text-element--mobile ) + px);
         }
     }
 
     @include QLD-media(md) {
         * + .qld__footer__logo {
             img {
-                @include QLD-space(margin-top, map-get( $QLD-space-map, $QLD-margin__text-element--desktop ) + px);
+                @include QLD-space(margin-top,  map.get( $QLD-space-map, $QLD-margin__text-element--desktop ) + px);
             }
-        }   
+        }
     }
-    
+
     &.qld__footer--dark,
     &.qld__footer--dark-alt{
         border-color: var(--QLD-color-dark__design-accent);
@@ -392,7 +393,7 @@
             }
             .qld__footer__column:last-of-type{
                 border-top: none;
-                
+
             }
         }
 
@@ -409,7 +410,7 @@
                 }
             }
         }
-        
+
         .qld__footer__cta__icon{
             color: var(--QLD-color-dark__action--secondary);
             text-align: middle;
@@ -454,23 +455,23 @@
                                 color: var(--QLD-color-dark__action--secondary-hover);
                             }
                         }
-                        
+
                         // svg{
                         //     color: var(--QLD-color-dark__action--secondary);
                         // }
-                        
+
                         &:has(svg) {
                             text-decoration: none;
                             span {
                                 @include QLD-underline('dark');
                             }
                         }
-                    } 
-                } 
-            } 
-        } 
+                    }
+                }
+            }
+        }
     }
-   
+
     &.qld__footer--dark-alt{
         background-color: var(--QLD-color-dark__background--alt);
     }

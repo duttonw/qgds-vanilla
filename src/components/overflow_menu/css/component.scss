@@ -71,6 +71,12 @@
                 height: 48px;
 
                 &-link {
+                    display: block;
+                    width: 100%;
+                    padding-right: 16px;
+                    padding-left: 16px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
                     color: var(--QLD-color-light__text);
                     background-color: var(--QLD-color-light__background--shade); //here
                     text-decoration: none;
@@ -102,12 +108,7 @@
                         text-decoration: none;
                     }
 
-                    display: block;
-                    width: 100%;
-                    padding-right: 16px;
-                    padding-left: 16px;
-                    padding-top: 12px;
-                    padding-bottom: 12px;
+
                 }
             }
         }

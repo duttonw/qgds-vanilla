@@ -86,7 +86,7 @@ label{
 }
 
 .qld__input--valid {
-    color: var(--QLD-color-light__text); 
+    color: var(--QLD-color-light__text);
 }
 
 
@@ -123,7 +123,7 @@ label{
     }
 }
 
-// Matrix forms 
+// Matrix forms
 .qld__grid .qld__form-group,
 .sq-form-question {
 	display: flex;
@@ -201,13 +201,14 @@ label{
 fieldset {
     display: flex;
     flex-direction: column;
-    * + & {
-        margin-top: 2rem;
-    }
     margin: 0;
     padding: 0;
     border: 0;
-}
+
+    * + & {
+        margin-top: 2rem;
+    }
+    }
 
 form {
     > .sq-form-control{
@@ -281,10 +282,10 @@ form {
 
 // .qld__control-input,
 // .sq-form-question li {
-	
+
 
 // 	& + .qld__control-input,
-	
+
 
 // 	&.qld__control-input--inline {
 // 		display: inline-block;
@@ -349,7 +350,7 @@ p.sq-form-error {
     &--hidden {
         display: none;
     }
-    
+
 }
 
 .qld__body--dark {
