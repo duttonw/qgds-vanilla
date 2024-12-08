@@ -90,16 +90,16 @@ Object.entries(themesMap).forEach(([theme, { paletteFile, scss, variables }]) =>
     } else {
         // Verify the @import statement
         const content = fs.readFileSync(filePath, 'utf8');
-        if (!content.includes(`@import "@qld-gov-au/qgds-tokens/dist/scss/styles/${paletteFile}";`)
+        if (!content.includes(`@qld-gov-au/qgds-tokens/dist/scss/styles/${paletteFile}`)
             || !content.includes(`@import "imports\/${variables}";`)) {
             console.error(`Invalid @import in file: ${scssFile}`);
             // Optionally fix the file
             const updatedContent = content.replace(
-                /@import "@qld-gov-au\/qgds-tokens\/.*?palette\.scss";/,
-                `@import "@qld-gov-au/qgds-tokens/dist/scss/styles/${paletteFile}";`
+                /@import "..\/..\/node_modules\/@qld-gov-au\/qgds-tokens\/.*?palette\.scss";/,
+                `@import "..\/..\/node_modules\/@qld-gov-au/qgds-tokens/dist/scss/styles/${paletteFile}";`
             ).replace(
                 /@import "imports\/variables.*\.scss";/,
-                `@import "imports\/${variabqGqles}";`
+                `@import "imports\/${variables}";`
             );
             fs.writeFileSync(filePath, updatedContent);
             console.log(`Fixed @import in file: ${filePath}`);

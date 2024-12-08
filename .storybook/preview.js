@@ -129,11 +129,15 @@ const preview = {
             // Try dynamic import of the SCSS
             if (brand) {
                 console.log(brand);
-                import(`../src/css/${brand}.scss`).catch((e) => {
-                    import(`./assets/css/${brand}.css`).catch((ex) => {
-                        console.error(`Failed to load brand styles: ${filename}`, ex);
-                    })
-                });
+                return `
+<link rel="stylesheet" href="./assets/css/${brand}.css" >
+${Story()}
+`
+                // import(`../src/css/${brand}.scss`).catch((e) => {
+                //     import(`./assets/css/${brand}.css`).catch((ex) => {
+                //         console.error(`Failed to load brand styles: ${filename}`, ex);
+                //     })
+                // });
             }
 
             return Story();

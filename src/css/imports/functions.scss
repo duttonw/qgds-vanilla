@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use 'sass:string';
 @use 'sass:math';
 @use 'sass:meta';
@@ -400,7 +401,7 @@
 	'large': 3,
 	'small': 4.5,
 	);
-	$ratio: map-get( $ratios, $ratioKey );
+	$ratio: map.get( $ratios, $ratioKey );
 
 	// Check the ratio straight away, if it passes return the value as hex
 	@if QLD-color-contrast( $toMakeA11y, $background, true, false ) >= $ratio {
