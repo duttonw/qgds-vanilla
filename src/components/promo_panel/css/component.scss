@@ -943,10 +943,11 @@ section.qld__body.qld__promo-panel {
 .qld__body--dark-alt  + data +  section.qld__promo-panel,
 .qld__body--dark-alt  +  section.qld__promo-panel{
     background: linear-gradient(to bottom, var(--QLD-color-dark-alt-background) 25px, var(--QLD-color-dark-alt-background) 25px, rgba(0, 0, 0, 0) 25px, rgba(0, 0, 0, 0) 100%);
+    background: var(--QLD-color-light__background--alt);
     @include QLD-media(md) {
         background: var(--QLD-color-dark-alt-background);
     }
-    background: var(--QLD-color-light__background--alt);
+
 }
 .qld__body--dark  + data +  section.qld__promo-panel,
 .qld__body--dark  + section.qld__promo-panel{

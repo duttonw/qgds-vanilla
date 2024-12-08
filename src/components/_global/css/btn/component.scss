@@ -184,10 +184,11 @@
 	.qld__btn.qld__btn--secondary,
 	a.qld__btn.qld__btn--secondary,
 	a.qld__btn.qld__btn--secondary:visited {
-		@include QLD-underline('light','noUnderline','default','noVisited');
-		color: var(--QLD-color-light__link);
-		background-color: transparent;
-		border: 3px solid var(--QLD-color-light__action--secondary);
+        background-color: transparent;
+        border: 3px solid var(--QLD-color-light__action--secondary);
+        color: var(--QLD-color-light__link);
+        @include QLD-underline('light','noUnderline','default','noVisited');
+
 
 		i{
 			color: var(--QLD-color-light__action--secondary);
@@ -250,10 +251,10 @@
 		.qld__btn.qld__btn--secondary,
 		a.qld__btn.qld__btn--secondary,
 		a.qld__btn.qld__btn--secondary:visited {
-			@include QLD-underline('dark','noUnderline','default','noVisited');
-			color: var(--QLD-color-dark__link);
-			background-color: transparent;
-			border: 3px solid var(--QLD-color-dark__action--secondary);
+            background-color: transparent;
+            border: 3px solid var(--QLD-color-dark__action--secondary);
+            color: var(--QLD-color-dark__link);
+            @include QLD-underline('dark','noUnderline','default','noVisited');
 
 			i{
 				color: var(--QLD-color-dark__action--secondary);
@@ -318,13 +319,13 @@
 	.qld__btn.qld__btn--tertiary,
 	a.qld__btn.qld__btn--tertiary,
 	a.qld__btn.qld__btn--tertiary:visited {
+        background-color: transparent;
+        border-color: transparent;
+        box-shadow: none;
+        color: var(--QLD-color-light__link);
 		@include QLD-underline('light','noUnderline','default','noVisited');
-		background-color: transparent;
-		color: var(--QLD-color-light__link);
-		border-color: transparent;
-		box-shadow: none;
 
-		i{
+        i{
 			color: var(--QLD-color-light__action--secondary);
 		}
 
@@ -381,13 +382,13 @@
 		a.qld__btn.qld__btn--tertiary,
 		a.qld__btn.qld__btn--tertiary:visited {
 
-			@include QLD-underline('dark','noUnderline','default','noVisited');
 			color: var(--QLD-color-dark__link);
 			background-color: transparent;
 			border-color: transparent;
 			box-shadow: none;
+            @include QLD-underline('dark','noUnderline','default','noVisited');
 
-			i{
+            i{
 				color: var(--QLD-color-dark__action--secondary);
 			}
 

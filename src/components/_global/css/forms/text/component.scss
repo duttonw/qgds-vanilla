@@ -178,6 +178,8 @@ textarea{
 		}
 
 		&.qld__text-input--error {
+            color: var(--QLD-color-light__text);
+
 			&:hover:not(:focus) {
 				border-color: $QLD-color-status__error;
 				background-color: $QLD-color-status__error--lighter;
@@ -187,7 +189,7 @@ textarea{
 			&::placeholder {
 				color: var(--QLD-color-light__text--lighter);
 			}
-			color: var(--QLD-color-light__text);
+
 		}
 
 		&:hover{

@@ -1,4 +1,5 @@
 /*! @gov.au/grid-12 v2.1.0 */
+@use "sass:math";
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // grid-12 module globals
@@ -39,7 +40,7 @@ $QLD-grid-12-columns: 12 !default;        //column amounts
         @include QLD-media(md) {
             @include QLD-container-padding($QLD-grid__gutter--media-sm, horizontal);
         }
-        
+
         @include QLD-media(lg) {
             // @include QLD-container-padding($QLD-grid__gutter--media-lg, horizontal);
         }
@@ -66,13 +67,13 @@ $QLD-grid-12-columns: 12 !default;        //column amounts
 @mixin QLD-grid-12-calc-grid-column( $index, $class, $type ) {
 	@if ( $type == width ) and ( $index > 0 ) {
         .col-#{ $class }-#{ $index } {
-            width: percentage( calc( $index / $QLD-grid-12-columns ) );
+            width: math.percentage( calc( $index / $QLD-grid-12-columns ) );
         }
 	}
 
 	@if ( $type == push ) and ( $index > 0 ) {
         .col-#{ $class }-push-#{ $index } {
-            left: percentage( calc( $index / $QLD-grid-12-columns ) );
+            left: math.percentage( calc( $index / $QLD-grid-12-columns ) );
         }
 	}
 
@@ -84,7 +85,7 @@ $QLD-grid-12-columns: 12 !default;        //column amounts
 
 	@if ($type == pull) and ( $index > 0 ) {
         .col-#{ $class }-pull-#{ $index } {
-            right: percentage( calc( $index / $QLD-grid-12-columns ) );
+            right: math.percentage( calc( $index / $QLD-grid-12-columns ) );
         }
 	}
 
@@ -96,7 +97,7 @@ $QLD-grid-12-columns: 12 !default;        //column amounts
 
 	@if ($type == offset) {
         .col-#{ $class }-offset-#{ $index } {
-            margin-left: percentage( calc( $index / $QLD-grid-12-columns ) );
+            margin-left: math.percentage( calc( $index / $QLD-grid-12-columns ) );
         }
 	}
 }
@@ -131,7 +132,7 @@ $QLD-grid-12-columns: 12 !default;        //column amounts
     @include QLD-container-padding($QLD-grid__gutter--media-sm, horizontal);
 
     @include QLD-media(md) {
-        @include QLD-container-padding($QLD-grid__gutter--media-sm, horizontal); 
+        @include QLD-container-padding($QLD-grid__gutter--media-sm, horizontal);
 
     }
 
@@ -153,17 +154,17 @@ $QLD-grid-12-columns: 12 !default;        //column amounts
     .qld__footer > .container-fluid{
 
         @include QLD-media(md) {
-            @include QLD-container-padding($QLD-grid__gutter--media-md, horizontal); 
+            @include QLD-container-padding($QLD-grid__gutter--media-md, horizontal);
         }
         @include QLD-media(lg) {
-            @include QLD-container-padding($QLD-grid__gutter--media-lg, horizontal); 
+            @include QLD-container-padding($QLD-grid__gutter--media-lg, horizontal);
         }
-        
+
 
     }
 
-    
-    
+
+
 }
 
 .qld__grid {
@@ -176,23 +177,23 @@ $QLD-grid-12-columns: 12 !default;        //column amounts
     .container-fluid {
         box-sizing: border-box;
         @include QLD-clearfix;
-        
+
         // .container,
         // .container-fluid:not(.qld__example__inline &) {
         //     padding: 0;
-            
+
         //     @include QLD-media(md) {
         //         padding: 0;
         //     }
-            
+
         //     @include QLD-media(lg) {
         //         padding: 0;
         //     }
-            
+
         //     @include QLD-media(xl) {
         //         padding: 0;
         //     }
-            
+
         //     @include QLD-media(xxl) {
         //         padding: 0;
         //     }
@@ -200,7 +201,7 @@ $QLD-grid-12-columns: 12 !default;        //column amounts
     }
 
     //create row and clear floats inside
-    .row { 
+    .row {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -211,27 +212,27 @@ $QLD-grid-12-columns: 12 !default;        //column amounts
         @include QLD-media(md) {
             @include QLD-container-margin($QLD-grid__gutter--media-sm, neg, horizontal);
         }
-        
+
         @include QLD-media(lg) {
             // @include QLD-container-margin($QLD-grid__gutter--media-md, neg, horizontal);
         }
 
-        
+
         // &--section {
         //     * + & {
         //         @include QLD-space(margin-top, 3unit);
         //     }
         // }
-        
+
         &--heading-paragraph-columns {
             * + h2 {
                 @include QLD-space(margin-top, 1.5unit);
             }
-            
+
             * + h3 {
                 @include QLD-space(margin-top, 1.5unit);
             }
-            
+
             * + p {
                 @include QLD-space(margin-top, 1unit);
 
@@ -247,21 +248,21 @@ $QLD-grid-12-columns: 12 !default;        //column amounts
                     // @include QLD-space(margin-bottom, 0unit);
                 }
 
-                
+
 
             }
-            
+
             .qld__callout {
                 + p {
                     @include QLD-space(margin-top, 1.5unit);
                 }
             }
-            
+
             @include QLD-media(lg) {
                 * + & {
                     @include QLD-space(margin-top, 1.5unit);
                 }
-                
+
                 h2,
                 h3,
                 p {
@@ -271,7 +272,7 @@ $QLD-grid-12-columns: 12 !default;        //column amounts
                 }
             }
         }
-        
+
         #content{
             @include QLD-media(md) {
                 @include QLD-container-padding($QLD-grid__gutter--media-sm, horizontal);
@@ -305,28 +306,28 @@ $QLD-grid-12-columns: 12 !default;        //column amounts
                     // }
                     // &:not(#content) { //QHWT-585
                     //     padding-right: 0.75rem;
-                    // } 
+                    // }
                 }
             }
-            
+
         }
     }
-    
+
     //create all classes
     @include QLD-grid-12-make-grid-columns;
     //create xs classes
     @include QLD-grid-12-make-grid(xs);
-    
+
     //create sm classes
     @include QLD-media(sm) {
         @include QLD-grid-12-make-grid(sm);
     }
-    
+
     //create md classes
     @include QLD-media(md) {
         @include QLD-grid-12-make-grid(md);
     }
-    
+
     //create lg classes
     @include QLD-media(lg) {
         @include QLD-grid-12-make-grid(lg);

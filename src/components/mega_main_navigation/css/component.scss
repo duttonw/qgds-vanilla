@@ -236,11 +236,12 @@
         }
 
         .qld__link-columns{
+            background-color: var(--QLD-color-light__background);
+
             @include QLD-media(lg, 'down') {
                 margin: 0;
             }
 
-            background-color: var(--QLD-color-light__background);
             &::before,
             &::after{
                 display: none;
@@ -254,11 +255,12 @@
             }
 
             li {
+                @include QLD-space(margin, 0);
                 @include QLD-media(lg, 'down') {
                     padding: 0;
                     box-shadow: none;
                 }
-                @include QLD-space(margin, 0);
+
 
                 &::after{
                     display: none;
