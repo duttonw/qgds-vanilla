@@ -4,14 +4,14 @@
 
 //QGDS Tokens: Design System Tokens + Typography
 /*
-@import "@qld-gov-au/qgds-tokens/dist/scss/styles/primitive.scss";
+@import "@qld-gov-au/qgds-tokens/dist/scss/styles/scss";
 @import "@qld-gov-au/qgds-tokens/dist/scss/styles/qgds.scss";
-@import "@qld-gov-au/qgds-tokens/dist/scss/styles/qgds-qld-default-palette.scss";
+@import "@qld-gov-au/qgds-tokens/dist/scss/styles/scss";
 */
 @use "sass:map";
-@import "./../../../node_modules/@qld-gov-au/qgds-tokens/dist/scss/styles/primitive.scss";
-@import "./../../../node_modules/@qld-gov-au/qgds-tokens/dist/scss/styles/qgds.scss";
 
+
+$QLD-side-nav-depth: 3 !default;
 
 /**
  * QLD-pixelfallback enable pixel fallbacks
@@ -586,5 +586,5 @@ $QLD-color-contained-layout__background: #EFF4F9;
 
 /*
 @import "@qld-gov-au/qgds-tokens/dist/css/styles/qgds-qld-high-contrast-palette.css";
-@import "@qld-gov-au/qgds-tokens/dist/css/styles/qgds.css";
+@import "@qld-gov-au/qgds-tokens/dist/css/styles/css";
 */

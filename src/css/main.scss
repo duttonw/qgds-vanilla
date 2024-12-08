@@ -3,14 +3,19 @@
 
 // These imports have no CSS output, but provide variables, mixins and helpers to aid in construction of
 // a design cutup.
-@import "@qld-gov-au/qgds-tokens/dist/scss/styles/qgds-qld-default-palette.scss";
+@use "sass:meta";
+@import "../../node_modules/@qld-gov-au/qgds-tokens/dist/scss/styles/qgds";
+@import "../../node_modules/@qld-gov-au/qgds-tokens/dist/scss/styles/primitive";
+@import "../../node_modules/@qld-gov-au/qgds-tokens/dist/scss/styles/qgds-qld-default-palette";
 
-@import "imports/variables.scss";
+@import "imports/variables";
+@import "imports/mixins";
+@import "imports/functions";
+@import "imports/placeholders";
+@import "imports/utilities";
 
-@import "imports/functions.scss";
-@import "imports/mixins.scss";
 
-@import "imports/placeholders.scss";
+
 
 // Libraries
 
@@ -41,13 +46,6 @@ html {
 
 // == End box-sizing reset ==
 
-/*
---------------------
-Utilities
---------------------
-*/
-
-@import "imports/utilities.scss";
 
 /*
 --------------------
@@ -126,5 +124,5 @@ Components
 --------------------
 */
 
-@import "components.scss";
+@include meta.load-css("components.scss");
 

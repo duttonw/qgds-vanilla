@@ -1,3 +1,5 @@
+@use "sass:string";
+
 @use 'sass:list';
 @use 'sass:map';
 @use 'sass:meta';
@@ -236,11 +238,11 @@
     @each $ext in $exts {
         $extmod: if(map.has-key($extmods, $ext), $ext + map.get($extmods, $ext), $ext);
         $format: if(map.has-key($formats, $ext), map.get($formats, $ext), $ext);
-        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+        $src: list.append($src, url(string.quote($path + "." + $extmod)) format(string.quote($format)), comma);
     }
 
     @font-face {
-        font-family: quote($name);
+        font-family: string.quote($name);
         font-style: $style;
         font-weight: $weight;
         src: $src;
@@ -275,7 +277,7 @@
 		$value: calc($value / 1unit); // This is to remove the unit value
 		$rem: calc($value / ( calc($value / $unit) * 0 + 1 ));
 
-		$fallback: list.join( $fallback, round( $value * ( $unit * $unit ) ) + 0px );
+		$fallback: list.join( $fallback, math.round( $value * ( $unit * $unit ) ) + 0px );
 		$output: list.join( $output, #{ $rem }rem );
 
 		$has_fallback: true;
@@ -466,11 +468,11 @@
 	}
 
 	@if not map.has-key( $QLD-fontsize-map, $fontsize-key ) {
-	@error "You shall not pass; the QLD-fontgrid mixin only takes the following fontsize keys strings: " + map-keys( $QLD-fontsize-map );
+	@error "You shall not pass; the QLD-fontgrid mixin only takes the following fontsize keys strings: " + map.keys( $QLD-fontsize-map );
 	}
 
 	@if not map.has-key( $QLD-lineheight-map, $lineheight-key ) {
-	@error "There's a snake in my boot; the QLD-fontgrid mixin only takes the following lineheight keys strings: " + map-keys( $QLD-lineheight-map );
+	@error "There's a snake in my boot; the QLD-fontgrid mixin only takes the following lineheight keys strings: " + map.keys( $QLD-lineheight-map );
 	}
 
 	// Get the value from supplied key for pixel and calculate the rem value
@@ -478,7 +480,7 @@
 	$fontsize-rem: calc($fontsize-px / $QLD-rem);
 
 	// Change the lineheight if it doesn't hit a QLD-unit e.g. 40px font size with 1.5 lineheight = 50px should be 52px
-	$lineheight-pixel: round( calc((map.get( $QLD-lineheight-map, $lineheight-key ) * $fontsize-px ) / $QLD-unit) ) * $QLD-unit;
+	$lineheight-pixel: math.round( calc((map.get( $QLD-lineheight-map, $lineheight-key ) * $fontsize-px ) / $QLD-unit) ) * $QLD-unit;
 	$lineheight: calc($lineheight-pixel / $fontsize-px);
 
 	// Mixin output

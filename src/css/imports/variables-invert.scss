@@ -11,6 +11,8 @@
 @import "@qld-gov-au/qgds-tokens/dist/scss/styles/primitive.scss";
 @import "@qld-gov-au/qgds-tokens/dist/scss/styles/qgds.scss";
 
+$QLD-side-nav-depth: 3 !default;
+
 /**
  * QLD-pixelfallback enable pixel fallbacks
  */
