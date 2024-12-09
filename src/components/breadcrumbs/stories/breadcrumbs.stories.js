@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "!Layout/Breadcrumbs",
+    title: "3 Layout/Breadcrumbs",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

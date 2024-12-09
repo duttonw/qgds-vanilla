@@ -63,7 +63,7 @@ const argsTypesSingle = {
 }
 
 export default {
-    title: "!Globals/Buttons",
+    title: "2 Globals/Buttons",
     controls: { expanded: true },
     render: ( args) => {
         handlebarsInit(Handlebars)

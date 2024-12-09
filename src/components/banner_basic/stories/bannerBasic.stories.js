@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "Components/Banner - Basic",
+    title: "Components/Banner/Banner (Basic)",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

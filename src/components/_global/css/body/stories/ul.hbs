@@ -11,4 +11,5 @@
 {{else}}
         {{{ component.data.content.value }}}
     {{/if}}
+    {{#if @partial-block}}{{> @partial-block }}{{/if}}
 </ul>

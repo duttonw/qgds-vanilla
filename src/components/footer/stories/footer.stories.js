@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "!Layout/Footer",
+    title: "3 Layout/Footer",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

@@ -1,7 +1,7 @@
 /**
  * @file callout.stories.js
  * @description Storybook configuration file for the callout component.
- * @module breadcrumbs.stories
+ * @module callout.stories
  */
 
 import example1 from "../html/example1.json";
@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "Components/Callout",
+    title: "Components/Callouts and quotes",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

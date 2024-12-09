@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "Components/Cards (Feature)",
+    title: "Components/Cards/Cards (Feature)",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

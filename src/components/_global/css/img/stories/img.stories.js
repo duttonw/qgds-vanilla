@@ -15,7 +15,7 @@ import handlebarsInit from "./../../../../../helpers/handlebars.init.js";
 import { unflattenJson, flattenJson } from "./../../../../../../.storybook/helpers.js";
 
 export default {
-    title: "!Globals/Image",
+    title: "1. Styles/Imagery (Image)",
     render: ( args) => {
         //must unflatten when rendering
         handlebarsInit(Handlebars)

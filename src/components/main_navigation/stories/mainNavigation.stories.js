@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "!Layout/Main Navigation",
+    title: "3 Layout/Navigation/Navigation Bar (Horizontal navigation)",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "!Layout/Tab",
+    title: "3 Layout/Tabs",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

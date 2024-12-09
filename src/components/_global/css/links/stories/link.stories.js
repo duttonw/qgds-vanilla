@@ -16,7 +16,7 @@ import {flattenJson, unflattenJson} from "../../../../../../.storybook/helpers.j
 
 
 export default {
-    title: "!Globals/Link",
+    title: "2 Globals/Link/Link",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {
@@ -80,8 +80,7 @@ export default {
 };
 
 /**
- * Default linked_list story
- * This is showing buttons list
+ * Default  story
  */
 export const Default = {};
 

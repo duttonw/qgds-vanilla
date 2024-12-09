@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "!Layout/Alerts (Global)",
+    title: "3 Layout/Alerts (Global)",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

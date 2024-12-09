@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "Components/Promo Panel",
+    title: "Components/Promotional panel",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

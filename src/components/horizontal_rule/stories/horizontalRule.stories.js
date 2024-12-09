@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "Components/Dividers (Horizontal rule)",
+    title: "Components/Horizontal rule (Dividers)",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

@@ -19,7 +19,7 @@ import {flattenJson, unflattenJson} from "../../../../../../.storybook/helpers.j
 
 
 export default {
-    title: "!Globals/Table",
+    title: "Components/Tables/Tables",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

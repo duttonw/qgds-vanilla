@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "!Layout/Updated Date",
+    title: "3 Layout/Updated Date",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

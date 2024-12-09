@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "!Layout/Multi Column",
+    title: "3 Layout/Multi Column",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

@@ -16,7 +16,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "Components/Widgets",
+    title: "Components/Widgets (Back to Top)",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

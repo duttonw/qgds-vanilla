@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "Components/In Page Navigation",
+    title: "Components/Navigation (In-page navigation)",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

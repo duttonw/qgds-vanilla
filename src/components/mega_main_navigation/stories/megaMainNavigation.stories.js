@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "!Layout/Main Navigation - Mega",
+    title: "3 Layout/Navigation/Navigation Bar (Mega Horizontal navigation)",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {
@@ -56,7 +56,7 @@ export default {
 };
 
 /**
- * Default
+ * Default See [Horizontal Navigation - Overview](?path=/docs/layout-navigation-bar-horizontal-navigation--horizontal-navigation-overview)
 
  */
 export const Default = {};

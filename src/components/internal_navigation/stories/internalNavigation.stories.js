@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "Components/Internal Navigation (Side Nav)",
+    title: "3 Layout/Navigation/Navigation Side Bar (Internal Navigation)",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

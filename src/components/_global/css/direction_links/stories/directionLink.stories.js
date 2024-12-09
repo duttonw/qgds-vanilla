@@ -16,7 +16,7 @@ import {flattenJson, unflattenJson} from "../../../../../../.storybook/helpers.j
 
 
 export default {
-    title: "!Globals/Link (Direction)",
+    title: "2 Globals/Link/Link (Direction)",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

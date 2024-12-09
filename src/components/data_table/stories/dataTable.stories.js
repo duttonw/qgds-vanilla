@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "Components/Data Table",
+    title: "Components/Tables/Tables (Data Table)",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

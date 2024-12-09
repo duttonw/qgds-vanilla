@@ -14,7 +14,7 @@ import handlebarsInit from "../../../helpers/handlebars.init.js";
 
 
 export default {
-    title: "Components/File Upload",
+    title: "Forms/File Upload",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {

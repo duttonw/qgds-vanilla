@@ -10,7 +10,14 @@ import exampleUnorderedList from "./unorderedList.json";
 import exampleOrderedList from "./orderedList.json";
 import exampleTemplate from "./example.test.hbs?raw";
 import exampleAllThemesTemplate from "./exampleAllTheme.test.hbs?raw";
+import underlinesExampleTemplate from "./underlinesExample.test.hbs?raw";
+import underlinesExampleJson from "./underlinesExample.json";
+import spacingExampleTemplate from "./spacingExample.test.hbs?raw";
+import spacingExampleJson from "./spacingExample.json";
+import spacingExample2Template from "./spacingExample2.test.hbs?raw";
+import spacingExample2Json from "./spacingExample2.json";
 
+import siteFitInQuestionaireJson from "../../../../../stories/BrandWhereDoesMySiteFitInQuestionnaire.json?raw";
 
 
 // load helpers handlebars
@@ -20,7 +27,7 @@ import {flattenJson, unflattenJson} from "../../../../../../.storybook/helpers.j
 
 
 export default {
-    title: "!Globals/Typography",
+    title: "1. Styles/Typography",
     render: ( args) => {
         handlebarsInit(Handlebars)
         try {
@@ -135,6 +142,25 @@ export const componentGlobalElements = {
         templateFile: exampleTemplate
     },
     // globals: { theme: 'Disabled' },
+    parameters: {
+        // Disables Chromatic's snapshotting on a component level
+        chromatic: {
+            modes: {
+                "Light": {
+                    theme: "Light",
+                },
+                "Light alternative": {
+                    theme: "Light alternative",
+                },
+                "Dark": {
+                    theme: "Dark",
+                },
+                "Dark alternative": {
+                    theme: "Dark alternative",
+                }
+            }
+        },
+    },
 }
 
 /**
@@ -144,4 +170,82 @@ export const AllThemesGlobalElements = {
     args: { ...exampleAll,
         templateFile: exampleAllThemesTemplate},
     globals: { theme: 'Disabled' },
+    parameters: {
+        // Disables Chromatic's snapshotting on a component level
+        chromatic: { disableSnapshot: true },
+    },
+}
+/**
+ * Hyperlink Underlines Example
+ */
+export const HyperlinkUnderlinesExample = {
+    args: { ...underlinesExampleJson,
+        templateFile: underlinesExampleTemplate},
+    globals: {  },
+}
+
+/**
+ * Spacing Example
+ */
+export const SpacingExample = {
+    args: { ...spacingExampleJson,
+        templateFile: spacingExampleTemplate},
+    globals: {  },
+}
+
+/**
+ * Section spacing example
+ */
+export const SpacingExample2 = {
+    args: { ...spacingExample2Json,
+        templateFile: spacingExample2Template},
+    globals: {  },
+}
+
+/**
+ * Where Does my site fit in
+ */
+export const brandSiteQuestionaire = {
+    render: () => {
+        let src = "https://static.qgov.net.au/formio-qld/v2/v2.x.x-latest/formio-script.min.js"
+        return `
+
+<h4> Note: This is a formio form using template:'semantic'.</h4>
+<p>Rendering  needs work to interface with the current design system</p>
+<br/>
+<div id="dynamicQuestionaire">Does not work on theme reload</div>
+
+<script id="scriptItem">
+let divId = document.querySelector("#dynamicQuestionaire");
+let src = "${src}"
+console.log("src set")
+function initForm(div) {
+      console.log('loading form');
+      console.log(div);
+      Formio.Templates.framework = 'semantic';
+      Formio.createForm(div, ${siteFitInQuestionaireJson})
+}
+
+if ( !document.querySelector(\`script[src='${src}']\`)  ) {
+   console.log('loading script');
+    let  elem = document.createElement("script");
+    elem.setAttribute("src", '${src}');
+    elem.setAttribute("async", "false");
+    document.body.appendChild(elem);
+    setTimeout(() => {
+        FormioScript.init().then(() => {
+            initForm(divId)
+        });
+    }, 100);
+
+} else {
+   console.log('skipped loading script');
+   setTimeout(() => {
+     initForm(divId )
+    }, 100);
+}
+
+</script>
+`},
+
 }
